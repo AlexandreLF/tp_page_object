@@ -18,5 +18,5 @@ class CartPage:
         wait.until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, self.modifyQuantity))).click()
         self.quantityDropdown = Select(self.driver.find_elements(By.CSS_SELECTOR, 'select[name="quantity"]'))
         self.quantityDropdown.select_by_value("2")
-
+li[aria-labelledby="quatity_2"]
 

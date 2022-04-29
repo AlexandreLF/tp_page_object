@@ -38,10 +38,10 @@ def test_page_object():
     booksPage = BooksPage(driver)
     booksPage.selectFirstBookOfNews()
     booksPage.addToCart()
-    booksPage.showCart()
+    booksPage.goToCart()
 
     cartPage = CartPage(driver)
-    cartPage.modify_quantity()
+    cartPage.changeQuantity()
 
     # Assert
     assert excpetedQuantity == cartPage.quantityDropdown
