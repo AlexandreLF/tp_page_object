@@ -9,7 +9,7 @@ class HomePage:
     hamburguer_menu_selector = "#nav-hamburger-menu"
     side_menu_selector = "#hmenu-canvas"
     books_menu_selector = "a[data-menu-id='10']"
-    allbooks = "ul.hmenu-visible li:nth-of-type(3)"
+    allBooksButton = "ul.hmenu-visible li:nth-of-type(3)"
 
     def __init__(self, driver: webdriver.Chrome):
         self.driver = driver
@@ -29,5 +29,5 @@ class HomePage:
         wait.until(expected_conditions.element_to_be_clickable((By.CSS_SELECTOR, self.tous_les_livres)))
 
     def openAllBooks(self):
-        self.driver.find_element(By.CSS_SELECTOR, self.allbooks).click()
+        self.driver.find_element(By.CSS_SELECTOR, self.allBooksButton).click()
 

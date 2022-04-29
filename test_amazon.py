@@ -35,3 +35,6 @@ def test_page_object():
     booksPage.showCart()
 
     cartPage = CartPage(driver)
+    cartPage.modify_quantity()
+
+    driver.quit()
