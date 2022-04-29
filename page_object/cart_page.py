@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class CartPage:
@@ -12,9 +14,9 @@ class CartPage:
         self.driver = driver
 
     def changeQuantity(self):
-        self.driver.find_element(By.CSS_SELECTOR, self.modifyQuantity).click()
+        wait = WebDriverWait(self.driver, 3)
+        wait.until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, self.modifyQuantity))).click()
         self.quantityDropdown = Select(self.driver.find_elements(By.CSS_SELECTOR, 'select[name="quantity"]'))
         self.quantityDropdown.select_by_value("2")
 
-        assert "2" == self.quantityDropdown
 

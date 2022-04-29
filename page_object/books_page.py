@@ -1,5 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BooksPage:
@@ -14,7 +16,8 @@ class BooksPage:
         self.driver.find_element(By.CSS_SELECTOR, self.firstBookOfNews).click()
 
     def addToCart(self):
-        self.driver.find_element(By.CSS_SELECTOR, self.addToCartButton).click()
+        wait = WebDriverWait(self.driver, 3)
+        wait.until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, self.addToCartButton))).click()
 
     def showCart(self):
         self.driver.find_element(By.CSS_SELECTOR, self.showCart).click()
