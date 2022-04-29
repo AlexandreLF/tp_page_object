@@ -17,7 +17,7 @@ class BooksPage:
 
     def addToCart(self):
         wait = WebDriverWait(self.driver, 3)
-        wait.until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, self.addToCartButton))).click()
+        wait.until(expected_conditions.element_to_be_clickable((By.CSS_SELECTOR, self.addToCartButton))).click()
 
     def showCart(self):
         self.driver.find_element(By.CSS_SELECTOR, self.showCart).click()

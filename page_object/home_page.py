@@ -25,8 +25,8 @@ class HomePage:
     def openBookCategory(self):
         self.driver.find_element(By.CSS_SELECTOR, self.books_menu_selector).click()
         wait = WebDriverWait(self.driver, 3)
-        wait.until(expected_conditions.invisibility_of_element_located((By.CSS_SELECTOR, self.livres_menu_selector)))
-        wait.until(expected_conditions.element_to_be_clickable((By.CSS_SELECTOR, self.tous_les_livres)))
+        wait.until(expected_conditions.invisibility_of_element_located((By.CSS_SELECTOR, self.books_menu_selector)))
+        wait.until(expected_conditions.element_to_be_clickable((By.CSS_SELECTOR, self.allBooksButton)))
 
     def openAllBooks(self):
         self.driver.find_element(By.CSS_SELECTOR, self.allBooksButton).click()
