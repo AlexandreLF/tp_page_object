@@ -1,5 +1,6 @@
 from page_object.home_page import HomePage
 from page_object.books_page import BooksPage
+from page_object.cart_page import CartPage
 from selenium import webdriver
 
 
@@ -27,3 +28,10 @@ def test_page_object():
     homePage.openAllMenu()
     homePage.openBookCategory()
     homePage.openAllBooks()
+
+    booksPage = BooksPage(driver)
+    booksPage.selectFirstBookOfNews()
+    booksPage.addToCart()
+    booksPage.showCart()
+
+    cartPage = CartPage(driver)
