@@ -15,3 +15,6 @@ class CartPage:
         self.driver.find_element(By.CSS_SELECTOR, self.modifyQuantity).click()
         self.quantityDropdown = Select(self.driver.find_elements(By.CSS_SELECTOR, 'select[name="quantity"]'))
         self.quantityDropdown.select_by_value("2")
+
+        assert "2" == self.quantityDropdown
+

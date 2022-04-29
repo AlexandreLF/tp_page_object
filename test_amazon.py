@@ -37,4 +37,7 @@ def test_page_object():
     cartPage = CartPage(driver)
     cartPage.modify_quantity()
 
+    assert "2" == cartPage.quantityDropdown
+
     driver.quit()
+    
