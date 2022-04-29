@@ -1,3 +1,5 @@
+import selenium
+
 from page_object.home_page import HomePage
 from page_object.books_page import BooksPage
 from page_object.cart_page import CartPage
@@ -19,7 +21,11 @@ def test_amazon1():
     driver.quit()
 
 def test_page_object():
-    driver = webdriver.Chrome()
+    # Arrange
+    excpetedQuantity = '2'
+
+    # Act
+    driver = selenium.webdriver.Chrome()
     driver.maximize_window()
     driver.get("https://www.amazon.fr/")
 
@@ -37,7 +43,7 @@ def test_page_object():
     cartPage = CartPage(driver)
     cartPage.modify_quantity()
 
-    assert "2" == cartPage.quantityDropdown
+    # Assert
+    assert excpetedQuantity == cartPage.quantityDropdown
 
     driver.quit()
-    
