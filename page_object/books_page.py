@@ -3,7 +3,10 @@ from selenium.webdriver.common.by import By
 
 
 class BooksPage:
-    firstBookOfNews = ''
+    firstBookOfNews = 'ul.a-unordered-list.a-nostyle.a-horizontal.octopus-pc-card-list.octopus-pc-card-height-v3 li'
+    addToCartButton = '[name="submit.add-to-cart"]'
+
+
 
     def __init__(self, driver: webdriver):
         self.driver = driver
@@ -12,4 +15,5 @@ class BooksPage:
     def selectFirstBookNouveautes(self):
         self.driver.find_element(By.CSS_SELECTOR, self.firstBookOfNews).click()
 
-
+    def addToCart(self):
+        self.driver.find_element(By.CSS_SELECTOR, self.addToCartButton).click()
